@@ -1,7 +1,7 @@
 import tkinter as tk
-from PIL import Image, ImageTk  # Pillow-Bibliothek nötig
+from PIL import Image, ImageTk  # pillow library
 import random
-import pygame
+import pygame                   #for music
 
 angle = 0 #Start angle for animation 
 
@@ -118,9 +118,7 @@ def key_generator():
     block_str_3,
     full_key
 )
-'''
-for me: How does 
-'''
+
 
 def rotate_key_image():
     global angle, pillow_img, key_img_label                  #defining global variables 
@@ -140,7 +138,7 @@ def button_clicked():
     button_generate_key.config(text="You have found a key!!!!", bg="lightgreen", fg="black", font=("Arial", 12, "bold"), state="disabled")
 
     #for music integration I had to use pygame functions
-    pygame.mixer.music.load("06. Level Complete.mp3")  
+    pygame.mixer.music.load("level_complete.mp3")  
     pygame.mixer.music.play()
 
     #I want to read all previous variables from the function key_generator()
